@@ -3,11 +3,11 @@ import os
 
 import aws_cdk as cdk
 
-from bootstrap_cdk.bootstrap_cdk_stack import BootstrapCdkStack
+from fastapi_example_cdk.fastapi_example_cdk_stack import FastapiExampleCdkStack
 
 
 app = cdk.App()
-BootstrapCdkStack(app, "BootstrapCdkStack",
+FastapiExampleCdkStack(app, "FastapiExampleCdkStack",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.

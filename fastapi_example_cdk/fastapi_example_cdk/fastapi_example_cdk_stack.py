@@ -10,7 +10,7 @@ from aws_cdk import (
 from constructs import Construct
 
 
-class BootstrapCdkStack(Stack):
+class FastapiExampleCdkStack(Stack):
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs):
         super().__init__(scope, construct_id, **kwargs)
@@ -37,9 +37,9 @@ class BootstrapCdkStack(Stack):
                                                                       handler=self.function_fastapiexample_api,
                                                                       proxy=True,
                                                                       cloud_watch_role=True,
-                                                                      deploy_options=apigateway.StageOptions(             
+                                                                      deploy_options=apigateway.StageOptions(
                                                                           stage_name="prod",
-                                                                          logging_level=apigateway.MethodLoggingLevel.INFO,                                                             
+                                                                          logging_level=apigateway.MethodLoggingLevel.INFO,
                                                                           access_log_destination=apigateway.LogGroupLogDestination(
                                                                               prod_log_group),
                                                                           access_log_format=apigateway.AccessLogFormat.json_with_standard_fields(
@@ -52,6 +52,6 @@ class BootstrapCdkStack(Stack):
                                                                               response_length=True,
                                                                               status=True,
                                                                               user=True
-                                                                          ), 
+                                                                          ),
                                                                       )
                                                                       )
